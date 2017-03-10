@@ -1,0 +1,16 @@
+@charset "utf-8";
+/*
+Theme Name: ★BizVektor子テーマサンプル★
+Theme URI: http://bizvektor.com
+Template: biz-vektor
+Description: 
+Author: ★あなた ｍ９っ・ｗ・）ｂ★
+Tags: 
+Version: 0.1.0
+*/
+
+
+span.wpcf7-form-control-wrap {
+    display: inline-block;
+    vertical-align: bottom;
+}

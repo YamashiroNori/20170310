@@ -1,0 +1,22 @@
+jQuery(function($) {
+  var $form = $('form.wpcf7-form');
+
+  $form.find('input[name^="amount"]').on('input', function() {
+    var $that = $(this);
+    var name = $that.attr('name');
+    var suffix = name.substring('amount'.length);
+    var price = parseInt($form.find('input[name="class-price' + suffix + '"]').val(), 10);
+    var amount = parseInt($that.val(), 10);
+    var sum = price * amount;
+console.log(price, amount);
+    $form.find('input[name="sum' + suffix + '"]').val(sum);
+
+    var total = 0;
+    $form.find('input[name^="sum"]').each(function() {
+      total += parseInt($(this).val(), 10);
+    });
+
+    $form.find('input[name="total"]').val(total);
+  });
+
+});
