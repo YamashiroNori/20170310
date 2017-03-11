@@ -1,15 +1,14 @@
 window.addEventListener('load', function() {
-  var submit = document.querySelector('#submit');
+  var submit = document.getElementById('submit');
   submit.addEventListener('click', function() {
-    console.log('test');
-    var total = document.querySelector('#total');
-    total.innerText = sumPrices(document.querySelectorAll('form > select.class-price > option:selected'));
+    var total = document.getElementById('total');
+    var test= sumPrices(document.querySelectorAll('form > select.class-price > option'));
+    console.log(test);
   });
 });
 
 function sumPrices(elms) {
-  return elms
-    .map(elm => elm.value)
+  return Array.from(elms, elm => elm.value)
     .filter(v => isNaN(parseInt(v, 10)))
     .map((a, b) => a + b);
 }
